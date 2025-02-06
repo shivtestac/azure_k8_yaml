@@ -15,6 +15,7 @@ spec:
       containers:
         - name: nginx
           image: dockerapppipe.azurecr.io/build1:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
       imagePullSecrets:
