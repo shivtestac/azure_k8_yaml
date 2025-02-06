@@ -37,8 +37,8 @@ steps:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'aks'
     namespace: 'default'
-    command:
-    arguments: 'set image deployment/nginx-deployment nginx=dockerapppipe.azurecr.io/build1:latest'
+    command: 'set'
+    arguments: ' image deployment/nginx-deployment nginx=dockerapppipe.azurecr.io/build1:latest'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
 
@@ -47,5 +47,5 @@ steps:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'aks'
     namespace: 'default'
-    command: 
-    arguments: 'rollout restart deployment/nginx-deployment' 
+    command: 'rollout'
+    arguments: 'restart deployment/nginx-deployment' 
