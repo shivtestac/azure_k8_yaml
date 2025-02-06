@@ -25,7 +25,7 @@ steps:
     kubernetesServiceEndpoint: 'aks'
     namespace: 'default'
     command: 'apply'
-    arguments: 'deployment.yaml'
+    arguments: '-f deployment.yaml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
     azureSubscriptionEndpointForSecrets: 'Pay-As-You-Go(1)(e0b04bb4-2704-41a6-894f-a1032232638a)'
