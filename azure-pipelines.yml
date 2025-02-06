@@ -19,23 +19,15 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: 'latest'
 
-
 - task: Kubernetes@1
   inputs:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'aks'
     namespace: 'default'
-    command: 'create'
+    command: 'apply'
+    arguments: 'deployment.yaml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
-    azureSubscriptionEndpointForSecrets: 'Pay-As-You-Go(e0b04bb4-2704-41a6-894f-a1032232638a)'
+    azureSubscriptionEndpointForSecrets: 'Pay-As-You-Go(1)(e0b04bb4-2704-41a6-894f-a1032232638a)'
     azureContainerRegistry: 'dockerapppipe.azurecr.io'
     secretName: 'acr-secret'
-
-- task: KubernetesManifest@1
-  inputs:
-    action: 'deploy'
-    connectionType: 'kubernetesServiceConnection'
-    kubernetesServiceConnection: 'aks'
-    namespace: 'default'
-    manifests: 'deployment.yaml'
