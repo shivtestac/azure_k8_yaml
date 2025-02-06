@@ -31,3 +31,13 @@ steps:
     azureSubscriptionEndpointForSecrets: 'Pay-As-You-Go(1)(e0b04bb4-2704-41a6-894f-a1032232638a)'
     azureContainerRegistry: 'dockerapppipe.azurecr.io'
     secretName: 'acr-secret'
+
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'Kubernetes Service Connection'
+    kubernetesServiceEndpoint: 'aks'
+    namespace: 'default'
+    command: 
+    arguments: 'set image deployment/nginx-deployment nginx=dockerapppipe.azurecr.io/build1:latest'
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Azure Container Registry'
