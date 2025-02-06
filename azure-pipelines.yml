@@ -25,7 +25,7 @@ steps:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'aks'
     namespace: 'default'
-    command: 'apply'
+    command: 'create'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
     azureSubscriptionEndpointForSecrets: 'Pay-As-You-Go(e0b04bb4-2704-41a6-894f-a1032232638a)'
