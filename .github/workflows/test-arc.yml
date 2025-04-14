@@ -1,0 +1,22 @@
+name: Actions Runner Controller Demo
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: arc-runner-set  # This matches your Helm INSTALLATION_NAME
+    steps:
+      - name: Display Start Message
+        run: echo "🎉 This job uses runner scale set runners!"
+
+      - name: Sleep for 5 minutes
+        run: |
+          echo "⏳ Sleeping for 5 minutes..."
+          sleep 300
+
+      - name: Display End Message
+        run: echo "✅ Finished sleeping for 5 minutes!"
