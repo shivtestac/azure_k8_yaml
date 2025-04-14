@@ -8,7 +8,7 @@ on:
 
 jobs:
   Explore-GitHub-Actions:
-    runs-on: arc-runner-set  # This matches your Helm INSTALLATION_NAME
+    runs-on: shiv  # This matches your Helm INSTALLATION_NAME
     steps:
       - name: Display Start Message
         run: echo "🎉 This job uses runner scale set runners!"
